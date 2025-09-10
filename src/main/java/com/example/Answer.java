@@ -15,15 +15,19 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Answer {
+	// 답변의 고유 번호
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	// 답변의 내용
 	@Column(columnDefinition = "CLOB")
 	private String content;
 	
+	// 답변 생성 시간
 	private LocalDateTime createDate;
 	
+	// 답변이 달린 질문 객체
 	@ManyToOne
 	private Question question;
 }
