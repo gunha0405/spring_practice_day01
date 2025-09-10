@@ -11,6 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.example.answer.AnswerRepository;
+import com.example.question.QuestionRepository;
+
 import jakarta.transaction.Transactional;
 
 @SpringBootTest
@@ -23,6 +26,7 @@ class SpringPracticeApplicationTests {
 	private AnswerRepository answerRepository;
 	
 	@Test
+	// DB 세션 유지를 위한 트랜잭션 어노테이션
 	@Transactional
 	void testJpa() {
 		/*
