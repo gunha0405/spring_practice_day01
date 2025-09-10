@@ -13,12 +13,12 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class QuestionController {
 	
-	private final QuestionRepository questionRepository;
+	private final QuestionService questionService;
 	
 	// Question 테이블의 모든 데이터를 조회해 thymeleaf에 셋팅 하는 메서드
 	@GetMapping("/question/list")
 	public String list(Model model) {
-		List<Question> questionList = this.questionRepository.findAll();
+		List<Question> questionList = questionService.getList();
 		model.addAttribute(questionList);
 		return "question_list";
 	}
